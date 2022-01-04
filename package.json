@@ -6,7 +6,6 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "hoso",
   "license": "ISC",
   "dependencies": {
     "cors": "^2.8.5",

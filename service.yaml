@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+
+  mongo:
+    container_name: mongo-DB
+    image: mongo
+    expose: 
+      - "27017"
+    ports: 
+      - "27017:27017"
+    volumes: 
+      - myDB:/data/db
+    
+  app:
+    build: .
+    container_name: node-mongo-app
+    restart: always
+    depends_on:
+      - mongo
+    ports:
+      - 3000:3000
+    stdin_open: true
+    tty: true
+
+volumes: 
+  myDB:
+
+  
